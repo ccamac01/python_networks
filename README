@@ -14,3 +14,19 @@ Purpose: takes a COMP course number as an argument,
 	 cid-v2.py uses sockets to create a TCP connection with the
 	 server, sends a GET request and receives the contents of
 	 the webpage
+
+
+Notes:
+
+Network Address Translation (NAT)
+This protocol is used when dealing with private IP addresses, since private IP's are not allowed to communicate with public IP's in the public internet. Most homes use private IP ranges and use NAT to access the internet. It shields a network from malware traffic that may be directed to the network from the internet.
+ The following steps make this possible:
+	1) Private IP device makes a request that involves accessing the internet
+	2) NAT device converts private IP (and port number if necessary) into one of it's public IP's before sending request to the internet
+	3) When the NAT device received data from the internet for that private IP, it converts the assigned public IP back to its original private IP before sending it back to the original device
+
+Cons: NAT rewrites TCP/UDP headers and IP but does not rewrite the application data (problem in FTP protocol). Server connections with clients may be blocked by a NAT router or firewall. Assume its not possible for a server to establish a connection with a client.
+
+IPv6 Addresses
+Example:    2001:0db8:85a3:0000:0000:b81a:63d6:135b
+Note: colons may cause conflicts when used in URI's and must be enclosed in square brackets like the following - http://[2001:db8:85a3::b81a:63d6:135b]/index.html
