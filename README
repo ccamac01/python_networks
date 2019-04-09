@@ -1,0 +1,16 @@
+This repository is a collection of code that I am writing in Python
+as I learn to network program with Python. I will also include notes in the README about topics that are new to me or that I found very interesting. 
+
+Filename: cid-v1.py (short for "comp index downloader version 1")
+Purpose: takes a COMP course number as an argument, 
+	 returns the COMP{course_number} index.html page
+	 from the cs.tufts.edu server,
+	 cid-v1.py uses urllib to make the request to the server
+
+Filename: cid-v2.py (short for "comp index downloader version 2")
+Purpose: takes a COMP course number as an argument, 
+	 returns the COMP{course_number} index.html page
+	 from the cs.tufts.edu server,
+	 cid-v2.py uses sockets to create a TCP connection with the
+	 server, sends a GET request and receives the contents of
+	 the webpage
